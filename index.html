@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            perspective: 1000px;
+        }
+    @keyframes rotate{
+        0%{
+            transform: rotateX(-20deg rotateY(0deg));
+        }
+        50%{
+            transform:  rotateX(0deg)rotateY(180deg);
+        }
+        100%{
+            transform: rotateX(20def rotateY(360deg));
+        }
+    }
+    .a{
+        position: relative;
+        width: 300px;
+        height: 150px;
+        margin: 200px auto;
+        background-image: url(./img/1.jpg);
+        background-size:cover; 
+        /* perspective: 1000px; */
+        transform-style: preserve-3d;
+       animation: rotate 5s linear infinite;
+    }
+    .a .b{
+        width: 300px;
+        height: 150px;
+        background-size:cover;
+        position: absolute;
+        top:20px;
+        left: 0; 
+        
+    }
+    .a .b:nth-child(1){
+        background-image: url(./img/2.jpg);
+        transform: rotateY(30deg) translateZ(300px)
+
+    }
+    .a .b:nth-child(2){
+        background-image: url(./img/3.jpg);
+        transform: rotateY(90deg) translateZ(300px)
+    }
+    .a .b:nth-child(3){
+        background-image: url(./img/4.jpg);
+        transform: rotateY(150deg) translateZ(300px)
+    }
+    .a .b:nth-child(4){
+        background-image: url(./img/5.jpg);
+        transform: rotateY(210deg) translateZ(300px)
+    }
+    .a .b:nth-child(5){
+        background-image: url(./img/6.jpg);
+        transform: rotateY(270deg) translateZ(300px)
+    }
+    .a .b:nth-child(6){
+        background-image: url(./img/7.jpg);
+        transform: rotateY(330deg) translateZ(300px)
+    }
+
+        /*1.a 是用来装所有图片的容器，定义好宽高，剧中处理  */
+        /*2.b是用于放展示的照片，设置好宽高，以图片为背景，尺寸设置为cover  */
+        /* 每一个b设置旋转的角度和散开的距离
+                1。把所有图片叠都一起，用绝对定位
+                2。 把父元素（body上）设置透视视距，用3D转换把图片沿Y轴旋转一个角度，
+                然后 */
+
+    </style>
+</head>
+<body>
+    <div class="a">
+        <div class="b"></div>
+        <div class="b"></div>
+        <div class="b"></div>
+        <div class="b"></div>
+        <div class="b"></div>
+        <div class="b"></div>
+    </div>
+</body>
+</html>
